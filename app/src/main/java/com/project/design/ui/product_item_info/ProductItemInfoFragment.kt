@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.marcoscg.dialogsheet.DialogSheet
 import com.project.design.R
@@ -164,6 +165,8 @@ class ProductItemInfoFragment : Fragment() {
         binding.prodName.text = productModel?.name
         binding.prodPrice.text = "₹"+productModel?.price.toString()
         binding.btmListLay.coinsText.text = "₹"+productModel?.price.toString()
+
+        context?.let { Glide.with(it).load(productModel?.image).error(R.drawable.ic_resume_folder_bro).into(binding.background) }
     }
 
     private fun setSlidingBehaviour() {
