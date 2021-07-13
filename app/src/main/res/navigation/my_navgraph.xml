@@ -80,26 +80,16 @@
             android:id="@+id/action_mainFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
 
-        <action
 
+        <action
 
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
 
-            android:id="@+id/action_mainFragment_to_earningFragment"
-            app:destination="@id/earningFragment" />
-
-        <action
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-
-
-            android:id="@+id/action_mainFragment_to_withdrawalRecordFragment"
-            app:destination="@id/withdrawalRecordFragment" />
+            android:id="@+id/action_mainFragment_to_productItemInfoFragment"
+            app:destination="@id/productItemInfoFragment" />
 
     </fragment>
     <fragment
@@ -183,19 +173,10 @@
 
 
     <fragment
-        android:id="@+id/earningFragment"
-        android:name="com.project.design.ui.purchase.EarningFragment"
-        android:label="purcahse_fragment"
-        tools:layout="@layout/purcahse_fragment" />
-
-    <fragment
-        android:id="@+id/withdrawalRecordFragment"
-        android:name="com.project.design.ui.withdrawal.WithdrawalRecordFragment"
-        android:label="withdrawal_record_fragment"
-        tools:layout="@layout/withdrawal_record_fragment" />
-
-
-
+        android:id="@+id/productItemInfoFragment"
+        android:name="com.project.design.ui.product_item_info.ProductItemInfoFragment"
+        android:label="product_item_info_fragment"
+        tools:layout="@layout/product_item_info_fragment" />
 
 
 </navigation>

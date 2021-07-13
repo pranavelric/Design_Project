@@ -17,13 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_cash_payment_bro" />
+            android:src="@drawable/ic_resume_folder_bro" />
 
         <View
             android:id="@+id/tempView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:alpha="0.5"
+            android:alpha="0.8"
             android:background="@color/black" />
 
 
@@ -493,7 +493,7 @@ android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:src="@drawable/ic_make_it_rain_pana" />
+                    android:src="@drawable/ic_account_amico" />
 
             </LinearLayout>
 
@@ -503,24 +503,6 @@ android:visibility="gone"
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-<!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
-<!--        android:id="@+id/complete_profile_fab"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom|end"-->
-<!--        android:layout_margin="@dimen/_8sdp"-->
-<!--        android:elevation="@dimen/_16sdp"-->
-<!--        android:text="Complete Profile"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="12sp"-->
-<!--        app:backgroundTint="@color/white"-->
-<!--        app:cornerRadius="@dimen/_16sdp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:rippleColor="@color/primary_color_variant"-->
-<!--        app:strokeColor="@color/primary_color"-->
-<!--        app:strokeWidth="@dimen/_1sdp" />-->
 
 
 

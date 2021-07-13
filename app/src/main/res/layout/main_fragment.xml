@@ -85,26 +85,63 @@
                 android:orientation="vertical"
                 android:paddingBottom="@dimen/_90sdp">
 
-                <LinearLayout
+
+
+
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/top_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:clickable="true"
+                    android:elevation="@dimen/_4sdp"
+                    android:focusable="true"
+app:layout_constraintTop_toTopOf="parent"
+                    app:cardBackgroundColor="@color/primary_color"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:rippleColor="@color/yellow">
 
-                    <Button
-                        android:id="@+id/quiz_game"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_100sdp"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_marginTop="@dimen/_44sdp"
-                        android:layout_marginEnd="@dimen/_8sdp"
-                        android:layout_weight="1"
-                        android:paddingTop="@dimen/_8sdp"
-                        android:paddingBottom="@dimen/_8sdp"
-                        android:text="Info" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-                </LinearLayout>
+                        android:background="@color/primary_color">
+
+
+                        <ImageView
+                            android:id="@+id/earning_img_label"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:src="@drawable/ic_data_points_cuate"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/game_record_heading"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Information"
+                            android:textColor="@color/white"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/earning_img_label"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"

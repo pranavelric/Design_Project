@@ -35,20 +35,43 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/purchase_date_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:id="@+id/prod_img_card"
+            >
+
+            <ImageView
+                android:id="@+id/prod_img"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/puzzle2"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+
+
         <TextView
             android:id="@+id/user_name_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_2sdp"
-            android:text="Recharged for  "
+            android:text="Order ID  "
             android:textColor="@color/primary_color"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/earning_img_label"
             app:layout_constraintTop_toBottomOf="@id/purchase_date_text" />
 
         <TextView
-            android:id="@+id/payment_amount"
+            android:id="@+id/order_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_4sdp"
@@ -57,7 +80,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/user_name_label"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/prod_img_card"
             app:layout_constraintStart_toEndOf="@id/user_name_label"
             app:layout_constraintTop_toTopOf="@id/user_name_label" />
 
@@ -68,14 +91,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:text="Withdrawal ID: "
+            android:text="Order Amount: "
             android:textColor="@color/primary_color"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/earning_img_label"
-            app:layout_constraintTop_toBottomOf="@id/payment_amount" />
+            app:layout_constraintTop_toBottomOf="@id/order_id" />
 
         <TextView
-            android:id="@+id/payment_id"
+            android:id="@+id/order_amount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_4sdp"
@@ -84,37 +107,10 @@
             android:textSize="10sp"
 
             app:layout_constraintBottom_toBottomOf="@id/user_id_label"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/prod_img_card"
             app:layout_constraintStart_toEndOf="@id/user_id_label"
             app:layout_constraintTop_toTopOf="@id/user_id_label" />
 
-
-
-        <TextView
-            android:id="@+id/userid_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="User ID: "
-            android:textColor="@color/primary_color"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@id/earning_img_label"
-            app:layout_constraintTop_toBottomOf="@id/user_id_label" />
-
-        <TextView
-            android:id="@+id/user_id"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:text="--"
-            android:textColor="@color/primary_color"
-            android:textSize="10sp"
-
-            app:layout_constraintBottom_toBottomOf="@id/userid_label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/userid_label"
-            app:layout_constraintTop_toTopOf="@id/userid_label" />
 
 
 
@@ -124,16 +120,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:text="Time: "
             android:textColor="@color/primary_color"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/earning_img_label"
-            app:layout_constraintTop_toBottomOf="@id/user_id" />
-
-
-
-
+            app:layout_constraintTop_toBottomOf="@id/order_amount" />
 
 
         <TextView
@@ -145,71 +137,13 @@
             android:textColor="@color/primary_color"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@id/user_email_label"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/prod_img_card"
             app:layout_constraintStart_toEndOf="@id/user_email_label"
             app:layout_constraintTop_toTopOf="@id/user_email_label" />
 
 
-        <TextView
-            android:id="@+id/withdrawal_status_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:text="Status: "
-            android:textColor="@color/primary_color"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@id/earning_img_label"
-            app:layout_constraintTop_toBottomOf="@id/user_email_label" />
-
-        <TextView
-            android:id="@+id/withdrawal_status_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:text="--"
-            android:textColor="@color/primary_color"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@id/withdrawal_status_label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/withdrawal_status_label"
-            app:layout_constraintTop_toTopOf="@id/withdrawal_status_label" />
 
 
-        <TextView
-            android:id="@+id/withdrawal_upi_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:text="UPI ID: "
-            android:textColor="@color/primary_color"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@id/earning_img_label"
-            app:layout_constraintTop_toBottomOf="@id/withdrawal_status_label" />
-
-        <TextView
-            android:id="@+id/withdrawal_upi_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:text="--"
-            android:textColor="@color/primary_color"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@id/withdrawal_upi_label"
-            app:layout_constraintEnd_toStartOf="@id/copy_upi"
-            app:layout_constraintStart_toEndOf="@id/withdrawal_upi_label"
-            app:layout_constraintTop_toTopOf="@id/withdrawal_upi_label" />
-
-        <ImageView
-            android:id="@+id/copy_upi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_3sdp"
-            android:src="@drawable/ic_baseline_content_copy_24"
-            app:layout_constraintBottom_toBottomOf="@id/withdrawal_upi_label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/withdrawal_upi_label" />
 
 
         <TextView
@@ -224,21 +158,21 @@
 
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/money_send_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_18sdp"
             android:layout_marginEnd="@dimen/_16sdp"
             android:layout_marginBottom="@dimen/_8sdp"
-            android:text="Set completed"
-            app:backgroundTint="#1E88E5"
+            android:text="Preparing for dispatch"
             android:textStyle="bold"
-      app:cornerRadius="@dimen/_8sdp"
-            android:id="@+id/money_send_button"
+            app:backgroundTint="#1E88E5"
+            app:cornerRadius="@dimen/_8sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/earning_img_label"
-            app:layout_constraintTop_toBottomOf="@id/withdrawal_upi_text" />
+            app:layout_constraintTop_toBottomOf="@id/prod_img_card" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

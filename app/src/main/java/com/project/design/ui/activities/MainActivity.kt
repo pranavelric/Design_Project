@@ -4,6 +4,7 @@ import android.Manifest.permission.READ_EXTERNAL_STORAGE
 import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -15,14 +16,20 @@ import androidx.navigation.ui.NavigationUI
 import com.google.firebase.auth.FirebaseAuth
 import com.thecode.aestheticdialogs.*
 import com.project.design.R
+import com.project.design.data.model.OrderModel
 import com.project.design.databinding.MainActivityBinding
 import com.project.design.utils.*
+import com.razorpay.Checkout
+import com.razorpay.PaymentData
+import com.razorpay.PaymentResultWithDataListener
 import dagger.hilt.android.AndroidEntryPoint
+import me.ibrahimsn.lib.SmoothBottomBar.Companion.d2p
+import org.json.JSONObject
 import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), PaymentResultWithDataListener {
 
     private lateinit var binding: MainActivityBinding
 
@@ -86,7 +93,28 @@ class MainActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        observeData()
 
+    }
+
+    private fun observeData() {
+        mainViewModel.createDepositLiveData.observe(this, { dt ->
+            when (dt) {
+                is ResponseState.Success -> {
+                    dt.data?.let { binding.root.snackbar(it) }
+
+                }
+                is ResponseState.Error -> {
+                    binding.progressBar.gone()
+                    dt.message?.let { binding.root.snackbar(it) }
+
+                }
+                is ResponseState.Loading -> {
+                }
+
+            }
+
+        })
     }
 
 
@@ -162,6 +190,96 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    var mOrderAmount: String = ""
+    lateinit var deposit: OrderModel
+    var productId: String = ""
+
+    fun startPayment(orderAmount: String, mproductId: String) {
+
+
+        mOrderAmount = orderAmount
+        productId = mproductId
+        val checkOut = Checkout()
+        try {
+
+            val jsonObj = JSONObject()
+            jsonObj.put("name", "Design Project")
+            jsonObj.put("description", "Buy product")
+            jsonObj.put("image", "https://rzp-mobile.s3.amazonaws.com/images/rzp.png")
+            jsonObj.put("currency", "INR")
+
+            val total = orderAmount.toInt() * 100
+            jsonObj.put("amount", total)
+
+            val prefill = JSONObject()
+            prefill.put("email", "")
+            prefill.put("contact", "")
+
+            jsonObj.put("prefill", prefill)
+
+
+            checkOut.open(this, jsonObj)
+
+
+        } catch (e: Exception) {
+
+            toast("Error in payment ${e.message}")
+
+        }
+
+    }
+
+
+    override fun onPaymentSuccess(paymentID: String?, p1: PaymentData?) {
+
+
+        try {
+
+            // add coins to users
+            // add data to deposit collection
+            deposit = OrderModel()
+            deposit.date = getTodaysDate()
+            deposit.time = getCurrentTime()
+            deposit.id = p1?.paymentId.toString()
+            deposit.paidAmount = mOrderAmount
+            deposit.productId = productId
+            deposit.userId = firebaseAuth.currentUser.uid
+            deposit.productId = productId
+
+
+            binding.progressBar.visible()
+            mainViewModel.createDeposit(deposit)
+
+        } catch (e: Exception) {
+
+
+            Log.d("RRR", "onPaymentSuccess:${e.message} ")
+        }
+
+        toast("Payment done successfully")
+    }
+
+    override fun onPaymentError(code: Int, response: String?, p2: PaymentData?) {
+
+        when (code) {
+            Checkout.NETWORK_ERROR -> {
+                binding.root.snackbar("Payment failed due to a network error.")
+            }
+            Checkout.INVALID_OPTIONS -> {
+                binding.root.snackbar("Payment failed ")
+            }
+            Checkout.PAYMENT_CANCELED -> {
+                binding.root.snackbar("Payment cancelled.")
+
+            }
+            Checkout.TLS_ERROR -> {
+                binding.root.snackbar("The device does not support TLS v1.1 or TLS v1.2.")
+            }
+
+        }
+
+    }
 
 
 }

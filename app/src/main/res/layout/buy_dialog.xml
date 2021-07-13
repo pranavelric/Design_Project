@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_one_side_rounded_chip"
+    android:paddingBottom="@dimen/_18sdp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="true"
+    android:backgroundTint="#FFFFFF"
+    app:behavior_peekHeight="0dp"
+    >
+
+
+    <TextView
+        android:id="@+id/game_slot_heading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_one_side_rounded_chip"
+        android:backgroundTint="@color/primary_color"
+        android:padding="@dimen/_8sdp"
+        android:text="Purchase"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/coins_label"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/gray_light"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp"
+        android:text="Price: "
+        android:textColor="@color/primary_color"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="@id/coins_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/coins_text" />
+
+    <TextView
+        android:id="@+id/coins_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/gray_light"
+        android:padding="@dimen/_8sdp"
+        android:text="₹0.0"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/_26sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/coins_label"
+        app:layout_constraintTop_toBottomOf="@id/game_slot_heading"
+
+        />
+
+    <TextView
+        android:id="@+id/choose_coins_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:text="Enter quantity."
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintTop_toBottomOf="@id/coins_text" />
+
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/upi_id_type"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:textSize="@dimen/_12sdp"
+
+        app:icon="@drawable/ic_coins"
+        app:iconGravity="start"
+        app:iconSize="@dimen/_28sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_coins_label" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/upi_id_lay"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+        app:boxCornerRadiusBottomStart="0dp"
+        app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+        app:boxCornerRadiusTopStart="0dp"
+        app:boxStrokeColor="@color/primary_color"
+        app:boxStrokeWidthFocused="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@id/upi_id_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/upi_id_type"
+        app:layout_constraintTop_toTopOf="@id/upi_id_type"
+
+        >
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_coins_amount"
+            style="@style/modifiedEditText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:hint="Enter product quantity"
+            android:imeOptions="actionDone"
+            android:inputType="numberSigned"
+            android:lines="1"
+            android:maxLines="1"
+            android:minLines="1"
+            android:textColor="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:text="Buy"
+        android:id="@+id/submit_coins"
+        app:layout_constraintTop_toBottomOf="@id/upi_id_lay" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

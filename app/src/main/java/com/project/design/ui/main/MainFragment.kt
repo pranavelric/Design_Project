@@ -166,21 +166,10 @@ class MainFragment : Fragment() {
                             putSerializable(USERS_BUNDLE_OBJ, user)
                         }
 
-                        findNavController().navigate(
-                            R.id.action_mainFragment_to_earningFragment,
-                            bundle
-                        )
 
                         return true
                     }
-//                    3->{
-//                        val bundle = Bundle().apply {
-//                            putSerializable(USERS_BUNDLE_OBJ, user)
-//                        }
-//
-//                        findNavController().navigate(R.id.action_mainFragment_to_settingsFragment,bundle)
-//                        return true
-//                    }
+
                     else -> {
 
                         return false
@@ -192,13 +181,24 @@ class MainFragment : Fragment() {
 
 
 
+        binding.topInfo.setOnClickListener {
 
 
-        binding.quizGame.setOnClickListener {
+        }
+
+
+        productAdapter.setOnItemClickListener { productModel, pos ->
+
+
             val bundle = Bundle().apply {
-                putSerializable(USERS_BUNDLE_OBJ, user)
+                putSerializable(USERS_BUNDLE_OBJ, productModel)
             }
-            //    findNavController().navigate(R.id.action_mainFragment_to_quizFragment, bundle)
+
+            findNavController().navigate(
+                R.id.action_mainFragment_to_productItemInfoFragment,
+                bundle
+            )
+
 
         }
 
@@ -223,18 +223,15 @@ class MainFragment : Fragment() {
 
                 return true
             }
-//            R.id.action_share -> {
-//                 activity?.share("Playstore link", "text")
-//
-//
-//
-//
-//                return true
-//            }
-//            R.id.action_refer->{
-//
-//            return false
-//            }
+            R.id.action_share -> {
+                activity?.share("Playstore link", "text")
+
+                return true
+            }
+            R.id.action_order_history -> {
+
+                return true
+            }
 
             else -> {
                 return false

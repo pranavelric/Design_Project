@@ -38,15 +38,9 @@ object Constants {
     const val USER_EMAIL = "USEREMAIL"
     const val USER_PASS = "USER_PASS"
     const val USER_PHONE_NUMBER = "USER_PHONE"
-
-
-
     const val NO_PREVIOUS_GAME = "No previous game is present"
-
-
-
-
     const val PRODUCTS= "PRODUCTS"
+    const val ORDERS = "ORDERS"
 
 
 

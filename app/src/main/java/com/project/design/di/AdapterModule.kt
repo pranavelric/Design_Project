@@ -12,21 +12,11 @@ import dagger.hilt.android.components.ActivityComponent
 @Module
 class AdapterModule {
 
-//    @Provides
-//    fun providesCompleteProfileAdapter(): CompleteProfileAdapter {
-//        return CompleteProfileAdapter()
-//    }
 
 
     @Provides
-    fun providesPurchaseAdapter(): PurchaseAdapter {
-        return PurchaseAdapter()
-    }
-
-
-    @Provides
-    fun providesWithdrawalRecordAdapter(): WithdrawalRecordAdapter {
-        return WithdrawalRecordAdapter()
+    fun providesWithdrawalRecordAdapter(): OrderRecordAdapter {
+        return OrderRecordAdapter()
     }
 
     @Provides

@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_product_card"
-    android:layout_width="@dimen/_120sdp"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_10sdp"
-    android:orientation="vertical">
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="₹ 20"-->
-<!--        app:cornerRadius="@dimen/_8sdp"-->
-<!--        android:layout_marginTop="-10dp"-->
-<!--        android:backgroundTint="@color/yellow"-->
-
-<!--        />-->
     <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/product_card"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_125sdp"
+    android:layout_margin="@dimen/_8sdp"
 android:elevation="91dp"
         android:layout_weight="1"
         android:clickable="true"
@@ -86,5 +70,3 @@ android:elevation="91dp"
 
     </com.google.android.material.card.MaterialCardView>
 
-
-</LinearLayout>
