@@ -73,6 +73,11 @@ class ProductItemInfoFragment : Fragment() {
     private fun setMyClickListener() {
         binding.buynow.setOnClickListener {
 
+            behaviour.state = BottomSheetBehavior.STATE_EXPANDED
+           // checkBottomSheetValue()
+        }
+
+        binding.btmListLay.submitCoins.setOnClickListener {
             checkBottomSheetValue()
         }
 
@@ -157,7 +162,7 @@ class ProductItemInfoFragment : Fragment() {
     private fun setData() {
         binding.prodDesc.text = productModel?.desc
         binding.prodName.text = productModel?.name
-        binding.prodPrice.text = productModel?.price.toString()
+        binding.prodPrice.text = "₹"+productModel?.price.toString()
     }
 
     private fun setSlidingBehaviour() {

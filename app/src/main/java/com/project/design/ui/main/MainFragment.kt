@@ -166,6 +166,7 @@ class MainFragment : Fragment() {
                             putSerializable(USERS_BUNDLE_OBJ, user)
                         }
 
+                        findNavController().navigate(R.id.action_mainFragment_to_orderHistoryFragment,bundle)
 
                         return true
                     }
@@ -229,7 +230,11 @@ class MainFragment : Fragment() {
                 return true
             }
             R.id.action_order_history -> {
+                val bundle = Bundle().apply {
+                    putSerializable(USERS_BUNDLE_OBJ, user)
+                }
 
+                findNavController().navigate(R.id.action_mainFragment_to_orderHistoryFragment,bundle)
                 return true
             }
 

@@ -90,6 +90,15 @@
 
             android:id="@+id/action_mainFragment_to_productItemInfoFragment"
             app:destination="@id/productItemInfoFragment" />
+        <action
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+
+            android:id="@+id/action_mainFragment_to_orderHistoryFragment"
+            app:destination="@id/orderHistoryFragment" />
 
     </fragment>
     <fragment
@@ -177,6 +186,11 @@
         android:name="com.project.design.ui.product_item_info.ProductItemInfoFragment"
         android:label="product_item_info_fragment"
         tools:layout="@layout/product_item_info_fragment" />
+    <fragment
+        android:id="@+id/orderHistoryFragment"
+        android:name="com.project.design.ui.order_history.OrderHistoryFragment"
+        android:label="order_history_fragment"
+        tools:layout="@layout/order_history_fragment" />
 
 
 </navigation>
