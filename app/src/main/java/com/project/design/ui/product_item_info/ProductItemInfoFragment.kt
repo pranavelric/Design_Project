@@ -130,10 +130,10 @@ class ProductItemInfoFragment : Fragment() {
     private fun showBuyProductBottomSheet(prodAmount: Double) {
 
 
-        val amount = prodAmount * productModel?.price!!
+        val amount = prodAmount.toInt() * productModel?.price!!
         context?.let {
             DialogSheet(it)
-                .setTitle("Place Bet")
+                .setTitle("Place order")
                 .setMessage("Order Amount: ₹${prodAmount * productModel?.price!!}")
                 .setColoredNavigationBar(true)
                 .setTitleTextSize(20) // In SP
@@ -163,6 +163,7 @@ class ProductItemInfoFragment : Fragment() {
         binding.prodDesc.text = productModel?.desc
         binding.prodName.text = productModel?.name
         binding.prodPrice.text = "₹"+productModel?.price.toString()
+        binding.btmListLay.coinsText.text = "₹"+productModel?.price.toString()
     }
 
     private fun setSlidingBehaviour() {
