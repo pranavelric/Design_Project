@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loan_apply_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_8sdp"
+    android:layout_marginTop="@dimen/_6sdp"
+    android:layout_marginEnd="@dimen/_8sdp"
+
+    android:clickable="true"
+    android:elevation="@dimen/_4sdp"
+    android:focusable="true"
+    app:cardCornerRadius="@dimen/_6sdp"
+    app:rippleColor="@color/primary_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#120465A5"
+        android:padding="0dp"
+
+        android:paddingEnd="@dimen/_16sdp"
+
+        >
+
+
+        <ImageView
+            android:id="@+id/earning_img_label"
+            android:layout_width="6dp"
+            android:layout_height="0dp"
+            android:src="#1E88E5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/user_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="Recharged for  "
+            android:textColor="@color/primary_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/earning_img_label"
+            app:layout_constraintTop_toBottomOf="@id/purchase_date_text" />
+
+        <TextView
+            android:id="@+id/payment_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:text="--"
+            android:textColor="@color/primary_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/user_name_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/user_name_label"
+            app:layout_constraintTop_toTopOf="@id/user_name_label" />
+
+
+        <TextView
+            android:id="@+id/user_id_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Withdrawal ID: "
+            android:textColor="@color/primary_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/earning_img_label"
+            app:layout_constraintTop_toBottomOf="@id/payment_amount" />
+
+        <TextView
+            android:id="@+id/payment_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:text="--"
+            android:textColor="@color/primary_color"
+            android:textSize="10sp"
+
+            app:layout_constraintBottom_toBottomOf="@id/user_id_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/user_id_label"
+            app:layout_constraintTop_toTopOf="@id/user_id_label" />
+
+
+
+        <TextView
+            android:id="@+id/userid_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="User ID: "
+            android:textColor="@color/primary_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/earning_img_label"
+            app:layout_constraintTop_toBottomOf="@id/user_id_label" />
+
+        <TextView
+            android:id="@+id/user_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:text="--"
+            android:textColor="@color/primary_color"
+            android:textSize="10sp"
+
+            app:layout_constraintBottom_toBottomOf="@id/userid_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userid_label"
+            app:layout_constraintTop_toTopOf="@id/userid_label" />
+
+
+
+
+        <TextView
+            android:id="@+id/user_email_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="Time: "
+            android:textColor="@color/primary_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/earning_img_label"
+            app:layout_constraintTop_toBottomOf="@id/user_id" />
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/payment_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:text="--"
+            android:textColor="@color/primary_color"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/user_email_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/user_email_label"
+            app:layout_constraintTop_toTopOf="@id/user_email_label" />
+
+
+        <TextView
+            android:id="@+id/withdrawal_status_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="Status: "
+            android:textColor="@color/primary_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/earning_img_label"
+            app:layout_constraintTop_toBottomOf="@id/user_email_label" />
+
+        <TextView
+            android:id="@+id/withdrawal_status_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:text="--"
+            android:textColor="@color/primary_color"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/withdrawal_status_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/withdrawal_status_label"
+            app:layout_constraintTop_toTopOf="@id/withdrawal_status_label" />
+
+
+        <TextView
+            android:id="@+id/withdrawal_upi_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="UPI ID: "
+            android:textColor="@color/primary_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/earning_img_label"
+            app:layout_constraintTop_toBottomOf="@id/withdrawal_status_label" />
+
+        <TextView
+            android:id="@+id/withdrawal_upi_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:text="--"
+            android:textColor="@color/primary_color"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/withdrawal_upi_label"
+            app:layout_constraintEnd_toStartOf="@id/copy_upi"
+            app:layout_constraintStart_toEndOf="@id/withdrawal_upi_label"
+            app:layout_constraintTop_toTopOf="@id/withdrawal_upi_label" />
+
+        <ImageView
+            android:id="@+id/copy_upi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:src="@drawable/ic_baseline_content_copy_24"
+            app:layout_constraintBottom_toBottomOf="@id/withdrawal_upi_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/withdrawal_upi_label" />
+
+
+        <TextView
+            android:id="@+id/purchase_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:text="June 10, 2021"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:text="Set completed"
+            app:backgroundTint="#1E88E5"
+            android:textStyle="bold"
+      app:cornerRadius="@dimen/_8sdp"
+            android:id="@+id/money_send_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/earning_img_label"
+            app:layout_constraintTop_toBottomOf="@id/withdrawal_upi_text" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

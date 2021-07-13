@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_product_card"
+    android:layout_width="@dimen/_120sdp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:orientation="vertical">
+
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="₹ 20"-->
+<!--        app:cornerRadius="@dimen/_8sdp"-->
+<!--        android:layout_marginTop="-10dp"-->
+<!--        android:backgroundTint="@color/yellow"-->
+
+<!--        />-->
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/product_card"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_125sdp"
+android:elevation="91dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/primary_color"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:rippleColor="@color/primary_color">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/price_text_path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_chip"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+               android:backgroundTint="@color/primary_color"
+                android:padding="@dimen/_5sdp"
+                android:text="₹ 20"
+                android:elevation="@dimen/_8sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+
+       app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:id="@+id/menu_img"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/puzzle2"
+                app:layout_constraintBottom_toTopOf="@id/text_path"
+                app:layout_constraintStart_toStartOf="parent"
+   app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/out_of_stock_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/os"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/text_path"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_path"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary_color"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Umbrella"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

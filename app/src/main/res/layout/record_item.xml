@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_4sdp"
+    app:cardBackgroundColor="#FFFFFF"
+    android:layout_margin="@dimen/_3sdp"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game id: "
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+        android:id="@+id/game_id_label"
+            android:textSize="14sp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/game_id_label"
+            android:id="@+id/game_id_text"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="June 10, 2021"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/game_date_text"
+            android:textSize="14sp"
+            />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            app:layout_constraintTop_toBottomOf="@id/game_id_label"
+            android:background="@color/gray_med"
+            android:layout_marginTop="@dimen/_4sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game started at: "
+            android:layout_marginTop="@dimen/_8sdp"
+      app:layout_constraintTop_toBottomOf="@id/view_line"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:id="@+id/game_started_label"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12.00 AM"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintTop_toTopOf="@id/view_line"
+            app:layout_constraintStart_toEndOf="@id/game_started_label"
+            android:id="@+id/game_started_text"
+            android:textSize="14sp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game end time: "
+app:layout_constraintTop_toBottomOf="@id/game_started_text"
+          app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:id="@+id/game_end_time_label"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12.00 AM"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintTop_toBottomOf="@id/game_started_text"
+          app:layout_constraintStart_toEndOf="@id/game_end_time_label"
+            android:id="@+id/game_end_time_text"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Winner Slot: "
+            app:layout_constraintTop_toBottomOf="@id/game_end_time_text"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:id="@+id/game_winner_label"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Andar"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintTop_toBottomOf="@id/game_end_time_label"
+            app:layout_constraintStart_toEndOf="@id/game_winner_label"
+            android:id="@+id/game_winner_text"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registered Players in Andar: "
+            app:layout_constraintTop_toBottomOf="@id/game_winner_text"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:id="@+id/game_reg_andar_label"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintTop_toBottomOf="@id/game_winner_label"
+            app:layout_constraintStart_toEndOf="@id/game_reg_andar_label"
+            android:id="@+id/game_reg_andar_text"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registered Players in Bahar: "
+            app:layout_constraintTop_toBottomOf="@id/game_reg_andar_label"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:id="@+id/game_reg_bahar_label"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintTop_toBottomOf="@id/game_reg_andar_label"
+            app:layout_constraintStart_toEndOf="@id/game_reg_bahar_label"
+            android:id="@+id/game_reg_bahar_text"
+            android:textSize="14sp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prize money: "
+            app:layout_constraintTop_toBottomOf="@id/game_reg_bahar_label"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:id="@+id/game_prize_label"
+            android:textSize="14sp"
+            android:visibility="gone"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintTop_toBottomOf="@id/game_reg_bahar_label"
+            app:layout_constraintStart_toEndOf="@id/game_prize_label"
+            android:id="@+id/game_prize_text"
+            android:textSize="14sp"
+            android:visibility="gone"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entry fee: "
+            app:layout_constraintTop_toBottomOf="@id/game_prize_label"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:id="@+id/game_entry_label"
+            android:textSize="14sp"
+            android:visibility="gone"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintTop_toBottomOf="@id/game_prize_label"
+            app:layout_constraintStart_toEndOf="@id/game_entry_label"
+            android:id="@+id/game_entry_fee_text"
+            android:textSize="14sp"
+            android:visibility="gone"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/game_started_text"
+            app:layout_constraintBottom_toBottomOf="@id/game_started_text"
+            android:text="LIVE"
+            android:fontFamily="sans-serif-black"
+            android:textSize="26sp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:textColor="@color/red"
+            android:visibility="gone"
+            android:id="@+id/live_tag"
+            />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

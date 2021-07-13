@@ -1,0 +1,2 @@
+rootProject.name = "EarningValley Admin"
+include ':app'

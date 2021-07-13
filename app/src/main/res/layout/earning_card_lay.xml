@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/loan_apply_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:elevation="@dimen/_4sdp"
+    android:focusable="true"
+    app:cardCornerRadius="@dimen/_4sdp"
+    app:rippleColor="@color/primary_color"
+    android:layout_marginStart="@dimen/_8sdp"
+    android:layout_marginEnd="@dimen/_8sdp"
+    android:layout_marginBottom="@dimen/_8sdp"
+    android:layout_marginTop="@dimen/_16sdp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0D040B14"
+        android:padding="@dimen/_6sdp"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_16sdp"
+
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_100sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_finance_amico"
+            android:id="@+id/earning_img_label"
+            android:scaleType="centerCrop"
+
+            />
+
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:textSize="20sp"
+            android:textColor="@color/primary_color"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/earning_img_label"
+            app:layout_constraintBottom_toBottomOf="@id/earning_img_label"
+            app:layout_constraintStart_toEndOf="@id/earning_img_label"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            />
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_date_btn"
+            android:text="Date"
+
+            app:layout_constraintTop_toBottomOf="@id/earning_img_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/give_coin_amount"
+            app:cornerRadius="@dimen/_4sdp"
+            android:textSize="@dimen/_14sdp"
+            android:padding="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_all_purchase_btn"
+            android:text="Show all purchase"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/select_date_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cornerRadius="@dimen/_4sdp"
+            android:textSize="@dimen/_14sdp"
+            android:padding="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/give_coin_amount"
+            android:text="Give coins"
+            app:layout_constraintTop_toBottomOf="@id/earning_img_label"
+            app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@id/select_date_btn"
+            app:cornerRadius="@dimen/_4sdp"
+            android:textSize="@dimen/_14sdp"
+            android:padding="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</com.google.android.material.card.MaterialCardView>
