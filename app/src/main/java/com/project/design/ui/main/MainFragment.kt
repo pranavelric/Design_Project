@@ -184,7 +184,9 @@ class MainFragment : Fragment() {
 
         binding.topInfo.setOnClickListener {
 
-
+            findNavController().navigate(
+                R.id.action_mainFragment_to_prodInfoFragment
+            )
         }
 
 

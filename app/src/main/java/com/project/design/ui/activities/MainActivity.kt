@@ -101,6 +101,7 @@ class MainActivity : AppCompatActivity(), PaymentResultWithDataListener {
         mainViewModel.createDepositLiveData.observe(this, { dt ->
             when (dt) {
                 is ResponseState.Success -> {
+                    binding.progressBar.gone()
                     dt.data?.let { binding.root.snackbar(it) }
 
                 }

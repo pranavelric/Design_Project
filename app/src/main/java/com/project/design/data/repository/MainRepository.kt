@@ -95,7 +95,7 @@ class MainRepository @Inject constructor() {
             MutableLiveData()
 
 
-        val userDepositRef =   usersRef.document(deposit.userId!!).collection(Constants.PRODUCTS).document(deposit.id.toString())
+        val userDepositRef =   usersRef.document(deposit.userId!!).collection(Constants.ORDERS).document(deposit.id.toString())
 
                 val globalDepositRef = rootRef.collection(Constants.ORDERS).document()
 
