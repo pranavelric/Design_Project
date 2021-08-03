@@ -9,14 +9,14 @@
     <FrameLayout
         android:id="@+id/timeContainer"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_300sdp"
+        android:layout_height="@dimen/_400sdp"
         android:background="@color/white">
 
         <ImageView
             android:id="@+id/background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:src="@drawable/ic_resume_folder_bro" />
 
 
@@ -29,7 +29,7 @@
         android:background="@drawable/bg_one_side_rounded_chip"
         android:orientation="vertical"
         app:behavior_hideable="false"
-        app:behavior_peekHeight="@dimen/_300sdp"
+        app:behavior_peekHeight="@dimen/_370sdp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
 

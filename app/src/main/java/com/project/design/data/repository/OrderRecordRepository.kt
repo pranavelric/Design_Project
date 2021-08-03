@@ -2,10 +2,7 @@ package com.project.design.data.repository
 
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.CollectionReference
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.FieldValue
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.*
 import com.project.design.data.model.OrderModel
 import com.project.design.data.model.ProductModel
 import com.project.design.data.model.Purchase
@@ -32,7 +29,7 @@ class OrderRecordRepository @Inject constructor() {
         val gameMutableLiveData: MutableLiveData<ResponseState<List<OrderModel?>>> =
             MutableLiveData()
         productList.clear()
-     usersRef.document(userid).collection(Constants.ORDERS).get().addOnCompleteListener {
+     usersRef.document(userid).collection(Constants.ORDERS).orderBy("date",Query.Direction.DESCENDING).get().addOnCompleteListener {
             if (it.isSuccessful) {
                 if (it.result != null && !it.result!!.isEmpty) {
 

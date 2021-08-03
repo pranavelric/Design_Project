@@ -74,8 +74,19 @@ class ProductItemInfoFragment : Fragment() {
     private fun setMyClickListener() {
         binding.buynow.setOnClickListener {
 
-            behaviour.state = BottomSheetBehavior.STATE_EXPANDED
-           // checkBottomSheetValue()
+            if (productModel?.inStock == true)
+                behaviour.state = BottomSheetBehavior.STATE_EXPANDED
+            else {
+                activity?.showCustomDialog(
+                    "Out of stock",
+                    "This product is currently unavailable",
+                    true,
+                    DialogStyle.EMOTION,
+                    DialogType.WARNING,
+                    DialogAnimation.SHRINK
+                )
+            }
+            // checkBottomSheetValue()
         }
 
         binding.btmListLay.submitCoins.setOnClickListener {
@@ -141,8 +152,9 @@ class ProductItemInfoFragment : Fragment() {
                 .setCancelable(true)
                 .setPositiveButton("Buy") {
 
-                    productModel!!.id?.let { it1 ->
-                        (activity as MainActivity).startPayment(amount.toString(),
+                    productModel?.let { it1 ->
+                        (activity as MainActivity).startPayment(
+                            amount.toString(),
                             it1
                         )
                     }
@@ -163,10 +175,13 @@ class ProductItemInfoFragment : Fragment() {
     private fun setData() {
         binding.prodDesc.text = productModel?.desc
         binding.prodName.text = productModel?.name
-        binding.prodPrice.text = "₹"+productModel?.price.toString()
-        binding.btmListLay.coinsText.text = "₹"+productModel?.price.toString()
+        binding.prodPrice.text = "₹" + productModel?.price.toString()
+        binding.btmListLay.coinsText.text = "₹" + productModel?.price.toString()
 
-        context?.let { Glide.with(it).load(productModel?.image).error(R.drawable.ic_resume_folder_bro).into(binding.background) }
+        context?.let {
+            Glide.with(it).load(productModel?.image).error(R.drawable.ic_resume_folder_bro)
+                .into(binding.background)
+        }
     }
 
     private fun setSlidingBehaviour() {

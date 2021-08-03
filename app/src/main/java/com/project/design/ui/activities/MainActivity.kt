@@ -17,13 +17,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.thecode.aestheticdialogs.*
 import com.project.design.R
 import com.project.design.data.model.OrderModel
+import com.project.design.data.model.ProductModel
 import com.project.design.databinding.MainActivityBinding
 import com.project.design.utils.*
 import com.razorpay.Checkout
 import com.razorpay.PaymentData
 import com.razorpay.PaymentResultWithDataListener
 import dagger.hilt.android.AndroidEntryPoint
-import me.ibrahimsn.lib.SmoothBottomBar.Companion.d2p
 import org.json.JSONObject
 import javax.inject.Inject
 
@@ -195,12 +195,14 @@ class MainActivity : AppCompatActivity(), PaymentResultWithDataListener {
     var mOrderAmount: String = ""
     lateinit var deposit: OrderModel
     var productId: String = ""
+    var productModel: ProductModel? = null
 
-    fun startPayment(orderAmount: String, mproductId: String) {
+    fun startPayment(orderAmount: String, mproductId: ProductModel) {
 
 
         mOrderAmount = orderAmount
-        productId = mproductId
+        productId = mproductId.id.toString()
+        productModel = mproductId
         val checkOut = Checkout()
         try {
 
@@ -247,7 +249,7 @@ class MainActivity : AppCompatActivity(), PaymentResultWithDataListener {
             deposit.productId = productId
             deposit.userId = firebaseAuth.currentUser.uid
             deposit.productId = productId
-
+            deposit.prodImg = productModel?.image
 
             binding.progressBar.visible()
             mainViewModel.createDeposit(deposit)
