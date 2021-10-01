@@ -13,10 +13,19 @@ For user study we performed interviews, observed the users and collected datas f
 ### OBJECTIVE
 To create a rain protector for motorbikes which is compact, sturdy and less flashy. That can cover most parts of the bike.
 
+## 3D RENDERS
+![image](https://user-images.githubusercontent.com/43497595/135604511-96fcf71a-af28-4afe-afac-8b295a56bd87.png)
 
+## Dimensions 
+![image](https://user-images.githubusercontent.com/43497595/135604575-f2b3565f-fb7e-419d-b5f5-c2b6b9772f5d.png)
 
+## FEATURES
 
-
+- Contractible and multiple fold frame for easy and compact use
+- Sturdy and less air resisting design which can withstand a speed of 60-70 Kmph.
+- Comfortable and enough space to accommodate two passengers 
+- Can be locked from the driver’s seat.
+- Suitable for Motor bikes
 
 
 
